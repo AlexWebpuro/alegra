@@ -1,3 +1,3 @@
 <?php
 
-// Silence is golden
+defined('ABSPATH') or die('Yo cant access to this file');
