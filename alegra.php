@@ -18,49 +18,17 @@
  * Domain Path:       /languages
  */
 
- define('ALG_DOMAIN', 'alegra');
- define('PLG_ALG_NAME', plugin_basename(__FILE__) );
+use Alex\Alegra\Init;
 
- register_activation_hook(
-	__FILE__,
-	'alegra_activate'
-);
+defined( 'ABSPATH') or die("Hey, what are you doing here? You silly human!");
 
-function alegra_activate() {
-    error_log('Plugin activated!');
+if( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php') ) {
+	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 }
 
-register_deactivation_hook(
-	__FILE__,
-	'alegra_deactivate'
-);
+define( 'PLUGIN_PATH', plugin_dir_path( __FILE__) );
+define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-function alegra_deactivate() {
-    error_log('Plugin deactivate!');
-}
-
-add_action( 'admin_menu', 'alegra_options_page' );
-function alegra_options_page() {
-    add_menu_page(
-        'Alegra',
-        'Alegra',
-        'manage_options',
-        'alegra',
-        'alegra_options_page_html',
-        // plugin_dir_url(__FILE__) . 'images/icon_wporg.png',
-		'',
-        5
-    );
-}
-
-function alegra_options_page_html() {
-	require_once __DIR__ . '/admin/view.php';
-}
-
-add_filter( 'plugin_action_links_' . PLG_ALG_NAME, 'alegra_settings_links', 1 );
-
-function alegra_settings_links( $links ) {
-	$setting_link = '<a href="admin.php?page=alegra">Setting</a>';
-	array_push( $links, $setting_link );
-	return $links;
+if(  class_exists( 'Alex\\Alegra\\Init') ) {
+	\Alex\Alegra\Init::register_services();
 }

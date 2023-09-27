@@ -1,0 +1,17 @@
+{
+    "name": "alex/alegra",
+    "description": "Woocommerce billing",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "Alex\\Alegra\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alex Monroy",
+            "email": "alexwebpuro@gmail.com"
+        }
+    ],
+    "require": {}
+}
