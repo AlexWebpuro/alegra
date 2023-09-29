@@ -24,6 +24,11 @@ class Admin extends BaseController
 
 		$this->setPages();
 		$this->setSubpages();
+		
+		$this->setSettings();
+		$this->setSections();
+		$this->setFields();
+
 		$this->settings->AddPages( $this->pages )
 			->withSubPage( 'Dashboard' )
 			->addSubPages( $this->subpages )
@@ -55,5 +60,68 @@ class Admin extends BaseController
 				'callback' => array( $this->admin_callbacks, 'adminSettings' ),
             ),
         );
+	}
+
+	public function setSettings() {
+		$args = array(
+			array(
+				'option_group' => 'alegra_options_group',
+				'option_name' => 'alegra_user',
+				'callback' => array( $this->admin_callbacks, 'alegraOptionsGroup' ),
+			),
+			array(
+				'option_group' => 'alegra_options_group',
+				'option_name' => 'alegra_pass',
+				'callback' => array( $this->admin_callbacks, 'alegraOptionsGroup' ),
+			),
+		);
+
+		$this->settings->setSettings( $args );
+	}
+
+	public function setSections() {
+		$args = array(
+			array(
+				'id' => 'alegra_admin_index',
+				'title' => 'Settings',
+				'callback' => array( $this->admin_callbacks, 'alegraAdminSection' ),
+				'page' => 'alegra',
+			),
+		);
+
+		$this->settings->setSections( $args );
+	}
+
+	public function setFields() {
+		$args = array(
+			array(
+				'id' => 'alegra_user',
+				'title' => 'Alegra user',
+				'callback' => array( $this->admin_callbacks, 'alegraUser' ),
+				'page' => 'alegra',
+				'section' => 'alegra_admin_index',
+				'args' => array(
+					array(
+						'label_for' => 'alegra_user',
+						'class' => 'alegra',
+					)
+				)
+			),
+			array(
+				'id' => 'alegra_token',
+				'title' => 'Alegra token',
+				'callback' => array( $this->admin_callbacks, 'alegraToken' ),
+				'page' => 'alegra',
+				'section' => 'alegra_admin_index',
+				'args' => array(
+					array(
+						'label_for' => 'alegra_pass',
+						'class' => 'alegra',
+					)
+				)
+			),
+		);
+
+		$this->settings->setFields( $args );
 	}
 }

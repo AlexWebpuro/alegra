@@ -5,15 +5,24 @@ namespace Alex\Alegra\Api;
 class SettingsApi
 {
     public $admin_pages = array();
+
     public $admin_subpages = array();
+
     public $subpages = array();
+
     public $settings = array();
+
     public $sections = array();
+
     public $fields = array();
 
     public function register() {
         if( ! empty( $this->admin_pages ) ) {
             add_action( 'admin_menu', array( $this, 'addAdminMenu') );
+        }
+
+        if( ! empty( $this->settings ) ) {
+            add_action( 'admin_init', array( $this, 'registerCustomFields' ) );
         }
     }
 
@@ -109,7 +118,6 @@ class SettingsApi
                 $section['title'],
                 ( isset( $section['callback'] ) ? $section['callback'] : ''),
                 $section['page'],
-                $section['args']
             );
         }
 
