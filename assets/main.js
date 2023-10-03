@@ -5,6 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
     const success = document.querySelector('.notice__success');
     const test = document.querySelector('.notice__api');
     const testSuccess = document.querySelector('.notice__api--success');
+    const testFailed = document.querySelector('.notice__api--failed');
     let form = document.querySelector('form');
 
     btnAlegraTest.addEventListener( 'click', testAlegraAPIConnection );
@@ -31,9 +32,12 @@ document.addEventListener( 'DOMContentLoaded', function() {
             .then( res => res.json() )
             .catch( error => console.log( error ) )
             .then( json => {
-                console.log( json );
+                if( json >= 299 && json <= 599 ) {
+                    testFailed.classList.toggle('hidden');
+                } else {
+                    testSuccess.classList.toggle('hidden');
+                }
                 test.classList.toggle('hidden');
-                testSuccess.classList.toggle('hidden');
                 setTimeout( hideNotices, TIME_DELAY );
             } );
     }
