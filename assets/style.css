@@ -1,6 +1,7 @@
 .notice {
     width: ( 100vw - 100px);
     height: 50px;
+    padding: 0;
     border: 2px solid gray;
     background-color: white;
     border-radius: 5px;
@@ -8,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 1s ease-in-out;
 }
 
 .show {
