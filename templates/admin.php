@@ -28,4 +28,10 @@
             Your credentials are right, we are connecting with Alegra!
         </span>
     </div>
+    <div class="notice notice__api notice__api--failed hidden" >
+        <span>
+            Your credentials are incorrect, please verify <a href="https://mi.alegra.com/integrations/api/">here</a>!
+        </span>
+        <span>Remember you must be loggged in <strong>alegra.com</strong> and have a available plan.</span>
+    </div>
 </div>
