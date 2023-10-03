@@ -3,6 +3,7 @@
 namespace Alex\Alegra;
 
 use Alex\Alegra\Pages\Admin;
+use Alex\Alegra\AlegraAPI\Alegra;
 
 final class Init
 {
@@ -10,7 +11,8 @@ final class Init
         return [
             Pages\Admin::class,
             Base\Enqueue::class,
-            Base\SettingsLink::class
+            Base\SettingsLink::class,
+            AlegraAPI\Alegra::class
         ];
     }
 

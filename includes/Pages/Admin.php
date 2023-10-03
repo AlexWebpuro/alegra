@@ -120,6 +120,19 @@ class Admin extends BaseController
 					)
 				)
 			),
+			array(
+				'id' => 'alegra_test',
+				'title' => 'Test your credentials',
+				'callback' => array( $this->admin_callbacks, 'alegraTest' ),
+				'page' => 'alegra',
+				'section' => 'alegra_admin_index',
+				'args' => array(
+					array(
+						'label_for' => 'alegra_test',
+						'class' => 'alegra',
+					)
+				)
+			),
 		);
 
 		$this->settings->setFields( $args );

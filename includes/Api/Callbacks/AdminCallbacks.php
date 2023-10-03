@@ -30,4 +30,7 @@ class AdminCallbacks extends BaseController {
         echo "<input type='password' class='regular-text' name='alegra_pass' value='$value'></input>";
     }
     
+    public function alegraTest() {
+        echo "<a href='' class='button button-secondary' id='alegra_test'>Test Alegra connection</a>";
+    }
 }
