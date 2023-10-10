@@ -12,7 +12,8 @@ final class Init
             Pages\Admin::class,
             Base\Enqueue::class,
             Base\SettingsLink::class,
-            AlegraAPI\Alegra::class
+            AlegraAPI\Alegra::class,
+            AlegraAPI\Customer::class
         ];
     }
 
