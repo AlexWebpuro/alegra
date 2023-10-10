@@ -11,12 +11,12 @@ class Enqueue extends BaseController
 		add_action( 'wp_ajax_alegra_test_connection', array( $this, 'loadTestConnection' ) );
     }
 	
-	function enqueue() {
-		wp_enqueue_script('alegra', $this->plugin_url . '/assets/main.js', array(), '1.0', true );
-		wp_enqueue_style('alegra', $this->plugin_url . 'assets/style.css', array(), '1.0', 'all' );
+	public function enqueue() {
+		wp_enqueue_script('alegra', $this->plugin_url . '/assets/main.js', array(), '', true );
+		wp_enqueue_style('alegra', $this->plugin_url . 'assets/style.css', array(), '', 'all' );
 	}
 	
-	function loadTestConnection() {
+	public function loadTestConnection() {
 		$alegra = new Alegra;
 		$alegra->getCretentials();
 		$response = $alegra->testAPIConnection();

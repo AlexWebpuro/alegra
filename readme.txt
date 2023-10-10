@@ -113,3 +113,12 @@ Markdown uses email style notation for blockquotes and I've been told:
 > Asterisks for *emphasis*. Double it up  for **strong**.
 
 `<?php code(); // goes in backticks ?>`
+
+
+Test API connection
+Markup to create contact ( Costumer )
+ - Checkout fields page
+ - Validation fields
+ - Meta data contact create in Costumer entity
+Trigger contact cretion
+Trigger billing creation
