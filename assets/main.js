@@ -44,7 +44,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 });
 
 function hideNotices() {
-    let $notices = document.querySelectorAll('.notice');
+    let $notices = document.querySelectorAll('.alegra__notice');
     $notices = [... $notices ];
 
     $notices.forEach(  $notice => {
