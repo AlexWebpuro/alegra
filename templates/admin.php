@@ -8,27 +8,27 @@
             submit_button();
         ?>
     </form>
-    <div class="notice notice__success hidden" >
+    <div class="alegra__notice notice__success hidden" >
         <span>
             Your connection was successfully!
         </span>
     </div>
-    <div class="notice notice__failed hidden" >
+    <div class="alegra__notice notice__failed hidden" >
         <span>
             Your connection was failed!
         </span>
     </div>
-    <div class="notice notice__api hidden" >
+    <div class="alegra__notice notice__api hidden" >
         <span>
             Verifing your credentials, please wait!
         </span>
     </div>
-    <div class="notice notice__api notice__api--success hidden" >
+    <div class="alegra__notice notice__api notice__api--success hidden" >
         <span>
             Your credentials are right, we are connecting with Alegra!
         </span>
     </div>
-    <div class="notice notice__api notice__api--failed hidden" >
+    <div class="alegra__notice notice__api notice__api--failed hidden" >
         <span>
             Your credentials are incorrect, please verify <a href="https://mi.alegra.com/integrations/api/">here</a>!
         </span>
